@@ -1,13 +1,16 @@
 package pl.cinema;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class CinemaRoom {
     private int totalRows;
     private int totalColumns;
-    private List<CinemaSeat> availableSeats;
+    private ArrayList<CinemaSeat> availableSeats = new ArrayList<>();
 
-    public CinemaRoom(int totalRows, int totalColumns, List<CinemaSeat> availableSeats) {
+    public CinemaRoom() {
+    }
+
+    public CinemaRoom(int totalRows, int totalColumns, ArrayList<CinemaSeat> availableSeats) {
         this.totalRows = totalRows;
         this.totalColumns = totalColumns;
         this.availableSeats = availableSeats;
@@ -29,16 +32,18 @@ public class CinemaRoom {
         this.totalColumns = totalColumns;
     }
 
-    public List<CinemaSeat> getAvailableSeats() {
+    public ArrayList<CinemaSeat> getAvailableSeats() {
+        ArrayList<CinemaSeat> availableSeats = new ArrayList<>();
         for (int i = 1; i <= totalRows; i++) {
             for (int j = 1; j <= totalColumns; j++) {
-                availableSeats.add(new CinemaSeat(i,j));
+                availableSeats.add(new CinemaSeat(i, j));
             }
         }
         return availableSeats;
     }
 
-    public void setAvailableSeats(List<CinemaSeat> availableSeats) {
+    public void setAvailableSeats(ArrayList<CinemaSeat> availableSeats) {
         this.availableSeats = availableSeats;
     }
 }
+
