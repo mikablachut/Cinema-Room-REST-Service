@@ -1,8 +1,8 @@
 package pl.cinema;
 
 public class CinemaSeat {
-    int row;
-    int column;
+    private int row;
+    private int column;
 
     public CinemaSeat(int row, int column) {
         this.row = row;
