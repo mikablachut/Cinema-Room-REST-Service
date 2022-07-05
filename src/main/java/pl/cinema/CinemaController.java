@@ -11,8 +11,6 @@ public class CinemaController {
     ArrayList<CinemaSeat> availableSeats = cinema.createCinemaRoom(9,9);
     CinemaRoom cinemaRoom = new CinemaRoom(9,9,availableSeats);
 
-
-
     @GetMapping("/seats")
     public CinemaRoom getCinemaRoom() {
         return cinemaRoom;
