@@ -3,10 +3,7 @@ package pl.cinema;
 public class CinemaSeat {
     private int row;
     private int column;
-
     private int price;
-
-
     public CinemaSeat(int row, int column) {
         this.row = row;
         this.column = column;
