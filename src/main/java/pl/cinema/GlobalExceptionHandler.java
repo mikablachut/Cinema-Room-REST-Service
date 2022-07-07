@@ -26,4 +26,13 @@ public class GlobalExceptionHandler {
         errorResponse.setError("The ticket has been already purchased!");
         return errorResponse;
     }
+
+    @ExceptionHandler(CinemaExpireTokenException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public ErrorResponse handleCinemaExpireTokenException(CinemaExpireTokenException ex) {
+        ErrorResponse errorResponse = new ErrorResponse();
+        errorResponse.setError("Wrong token!");
+        return errorResponse;
+    }
 }
