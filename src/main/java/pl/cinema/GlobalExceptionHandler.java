@@ -35,4 +35,13 @@ public class GlobalExceptionHandler {
         errorResponse.setError("Wrong token!");
         return errorResponse;
     }
+
+    @ExceptionHandler(CinemaPasswordNotFoundException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ResponseBody
+    public ErrorResponse handleCinemaPasswordNotFoundException(CinemaPasswordNotFoundException ex) {
+        ErrorResponse errorResponse = new ErrorResponse();
+        errorResponse.setError("The password is wrong!");
+        return errorResponse;
+    }
 }

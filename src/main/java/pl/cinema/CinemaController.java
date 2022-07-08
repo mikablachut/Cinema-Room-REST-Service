@@ -1,9 +1,6 @@
 package pl.cinema;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -15,6 +12,14 @@ public class CinemaController {
     ArrayList<CinemaTicket> cinemaTickets = new ArrayList<>();
     ArrayList<CinemaSeat> availableSeats = cinema.createCinemaRoom(9,9);
     CinemaRoom cinemaRoom = new CinemaRoom(9,9,availableSeats);
+
+    private int getCurrentIncome(ArrayList<CinemaTicket> cinemaTickets) {
+        int currentIncome = 0;
+        for (CinemaTicket ticket : cinemaTickets) {
+            currentIncome += ticket.getTicket().getPrice();
+        }
+        return currentIncome;
+    }
 
     @GetMapping("/seats")
     public CinemaRoom getCinemaRoom() {
@@ -55,5 +60,14 @@ public class CinemaController {
             }
         }
         throw new CinemaExpireTokenException();
+    }
+
+    @PostMapping("/stats")
+    public CinemaStatistic getStatistic(@RequestParam(required = false) String password) {
+            if (password != null && password.equals("super_secret")) {
+                return new CinemaStatistic(getCurrentIncome(cinemaTickets),
+                        availableSeats.size(), cinemaTickets.size());
+            }
+        throw new CinemaPasswordNotFoundException();
     }
 }
