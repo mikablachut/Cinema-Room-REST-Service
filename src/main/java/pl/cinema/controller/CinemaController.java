@@ -1,7 +1,11 @@
-package pl.cinema;
+package pl.cinema.controller;
 
 import org.springframework.web.bind.annotation.*;
-
+import pl.cinema.exceptions.CinemaExpireTokenException;
+import pl.cinema.exceptions.CinemaPasswordNotFoundException;
+import pl.cinema.exceptions.CinemaPurchaseNotFoundException;
+import pl.cinema.exceptions.CinemaSeatNotFoundException;
+import pl.cinema.objects.*;
 import java.util.ArrayList;
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package pl.cinema;
+package pl.cinema.objects;
 
 public class CinemaSeat {
     private int row;
@@ -23,10 +23,6 @@ public class CinemaSeat {
         return row;
     }
 
-    public void setRow(int row) {
-        this.row = row;
-    }
-
     public int getColumn() {
         return column;
     }
@@ -38,9 +34,4 @@ public class CinemaSeat {
     public void setPrice(int price) {
         this.price = price;
     }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
-
 }

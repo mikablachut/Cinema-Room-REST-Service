@@ -1,7 +1,6 @@
-package pl.cinema;
+package pl.cinema.objects;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class CinemaRoom {
     private int totalRows;

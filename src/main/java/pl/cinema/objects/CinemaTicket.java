@@ -1,6 +1,7 @@
-package pl.cinema;
+package pl.cinema.objects;
 
-import java.util.ArrayList;
+import pl.cinema.objects.CinemaSeat;
+
 import java.util.UUID;
 
 public class CinemaTicket {

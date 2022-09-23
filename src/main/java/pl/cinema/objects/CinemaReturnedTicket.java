@@ -1,4 +1,4 @@
-package pl.cinema;
+package pl.cinema.objects;
 
 public class CinemaReturnedTicket {
     private CinemaSeat returnedTicket;

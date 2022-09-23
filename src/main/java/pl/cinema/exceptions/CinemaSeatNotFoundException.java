@@ -1,4 +1,4 @@
-package pl.cinema;
+package pl.cinema.exceptions;
 
 public class CinemaSeatNotFoundException extends RuntimeException {
     public CinemaSeatNotFoundException() {
