@@ -61,7 +61,7 @@ java -jar .\build\libs\cinema-2.7.1.jar
 
 ## Endpoints
 
-When you start the application cinema room will be created.The cinema room will have 9 rows with 9 seats in each of them.You can use [Postman](https://www.postman.com) or any similar program for testing the APIs.
+When you start the application a cinema room will be created. The cinema room will have 9 rows with 9 seats in each of them. You can use [Postman](https://www.postman.com) or any similar program to test the APIs.
 
 ### Cinema Seats Endpoint
 
@@ -116,7 +116,7 @@ GET method
 
 ### Purchase Ticket Endpoint
 
-Endpoint recives a JSON object with two fields: row number and column number. If the seat is available, the program will mark it as purchased and responds with 200 (Ok). If the seat is taken or if users pass the wrong row/column number, the program will respond with 400 (BadRequest).
+Endpoint recives a JSON object with two fields: row number and column number. If the seat is available, the program will mark it as purchased and responds with 200 (Ok). If the seat has been reserved or if users entered the wrong row/column number, the program will respond with 400 (BadRequest).
 
 POST method
 
@@ -199,7 +199,7 @@ Request body:
 
 ### Return Ticket Endpoint
 
-Endpoint recives a JSON object with field token. If the program identifies the ticket to which the token relates, the seat will be marked as available and information about the returned ticket will be displayed. If the program cannot identify the ticket by the token, it will respond with a status code 400.
+Endpoint recives a JSON object with field token. If the program identifies the ticket to which the token refers to, the seat will be marked as available and information about the returned ticket will be displayed. If the program cannot identify the ticket by the token, it will respond with a status code 400.
 
 POST method
 
@@ -255,7 +255,7 @@ Request body:
 
 ### Cinema Statistic Endpoint
 
-Endpoint handle POST requests with URL parameters.  If the URL parameters contain a password key with a super_secret value, the program will return the movie theatre statistics. If the parameters don't contain a password key or a wrong value has been passed, the program will respond with a 401 status code.
+Endpoint handles POST requests with URL parameters. If the URL parameters contain a password with a 'super_secret' value, the program will return the movie theatre statistics. If the parameters don't contain a password or a wrong value has been entered, the program will respond with a 401 status code.
 
 POST method
 
