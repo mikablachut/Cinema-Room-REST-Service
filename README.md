@@ -56,7 +56,7 @@ Steps for this scenario:
 
 ```
 gradle build
-java -jar .\build\libs\recipes-2.7.2.jar
+java -jar .\build\libs\cinema-2.7.1.jar
 ```
 
 ## Endpoints
@@ -290,8 +290,3 @@ POST method
 
 </p>
 </details>
-
-
-
-
-
