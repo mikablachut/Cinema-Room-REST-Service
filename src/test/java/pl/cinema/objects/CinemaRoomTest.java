@@ -9,7 +9,7 @@ class CinemaRoomTest {
 
     @Test
     @DisplayName("testCreateCinemaRoom()")
-    void compareCinemaRooms() {
+    public void compareCinemaRooms() {
         CinemaRoom cinemaRoom = new CinemaRoom();
         ArrayList<CinemaSeat> result = cinemaRoom.createCinemaRoom(3,2);
         ArrayList<CinemaSeat> expectedResult = cinemaSeatsFactory();

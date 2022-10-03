@@ -12,12 +12,11 @@ import java.util.UUID;
 @RestController
 public class CinemaController {
     CinemaRoom cinema = new CinemaRoom();
-
     ArrayList<CinemaTicket> cinemaTickets = new ArrayList<>();
     ArrayList<CinemaSeat> availableSeats = cinema.createCinemaRoom(9,9);
     CinemaRoom cinemaRoom = new CinemaRoom(9,9,availableSeats);
 
-    private int getCurrentIncome(ArrayList<CinemaTicket> cinemaTickets) {
+    public int getCurrentIncome(ArrayList<CinemaTicket> cinemaTickets) {
         int currentIncome = 0;
         for (CinemaTicket ticket : cinemaTickets) {
             currentIncome += ticket.getTicket().getPrice();
